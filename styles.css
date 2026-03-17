@@ -1,0 +1,1105 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #000000, #1a1a1a, #333333);
+    background-size: 100% 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    color: #c0c0c0;
+    overflow: hidden;
+    position: relative;
+}
+
+.waves-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+.header-container {
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.header {
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;
+    font-size: 42px;
+    padding: 20px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #e0dfdc;
+    background: transparent;
+    letter-spacing: 0.08em;
+    text-shadow: none;
+}
+
+.profit-indicator {
+    margin: 80px 0 20px;
+}
+
+.indicator-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 40px;
+    position: relative;
+    justify-content: center;
+}
+
+.indicator-bar {
+    position: relative;
+    width: 25px;
+    height: 250px;
+    background: linear-gradient(to top, #333333, #d3d3d3);
+    border: 3px solid #c0c0c0;
+    border-radius: 15px;
+}
+
+.indicator-line {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    height: 5px;
+    background-color: #fff;
+    transition: top 0.3s ease;
+}
+
+.percent-text {
+    position: absolute;
+    top: -50px;
+    left: 35px;
+    color: #d3d3d3;
+    font-size: 36px;
+    text-align: left;
+}
+
+.indicator-label {
+    position: absolute;
+    left: 150px;
+    top: 0;
+    color: #d3d3d3;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    max-width: 400px;
+}
+
+.cmd-window {
+    background-color: #000;
+    border: 2px solid #c0c0c0;
+    width: 700px;
+    height: 700px;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transition: height 0.5s ease-in-out;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cmd-window.expanded {
+    height: 700px;
+}
+
+.title-bar {
+    background-color: #c0c0c0;
+    color: #000;
+    padding: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #000;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gas-tracker {
+    font-size: 14px;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.gas-icon {
+    color: #333333;
+}
+
+.cmd-content {
+    padding: 20px;
+    height: calc(100% - 34px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    overflow-y: auto;
+}
+
+.connect-button {
+    background-color: #c0c0c0;
+    border: 2px outset #fff;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    transition: background-color 0.2s, border 0.2s, box-shadow 0.2s;
+    border-radius: 3px;
+}
+
+.connect-button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #d3d3d3, 0 0 20px #d3d3d3, 0 0 30px #d3d3d3;
+}
+
+.connect-button:active {
+    background-color: #c0c0c0;
+    border: 2px inset #fff;
+}
+
+.plug-icon::before {
+    content: '🔌';
+    font-size: 18px;
+}
+
+.wallet-address-container {
+    width: 100%;
+    padding: 10px;
+    background-color: #c0c0c0;
+    border: 2px inset #fff;
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    word-break: break-all;
+    border-radius: 3px;
+    display: none;
+}
+
+.wallet-address-container.visible {
+    display: block;
+}
+
+.tutorial-section {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.tutorial-section.visible {
+    display: flex;
+}
+
+.tutorial-text-container {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    border: 2px outset #c0c0c0;
+    color: #c0c0c0;
+    position: relative;
+    border-radius: 3px;
+}
+
+.tutorial-text-container::before {
+    content: 'AI-WaveTerm:';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #000;
+    color: #c0c0c0;
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.tutorial-text {
+    text-align: left;
+    white-space: pre-wrap;
+    min-height: 40px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.tutorial-text .highlight {
+    font-weight: 600;
+    color: #c0c0c0;
+}
+
+.tutorial-text a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.tutorial-text a:hover {
+    text-decoration: underline;
+}
+
+.button-container {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button-container.visible {
+    display: flex;
+}
+
+.deploy-button,
+.try-button,
+.initialize-button,
+.withdraw-button,
+.want-deposit-button,
+.learn-more-button,
+.all-clear-button,
+.not-interested-button,
+.qr-yes-button,
+.qr-no-button,
+.retry-button,
+.back-button,
+.qr-want-button,
+.status-button,
+.close-button {
+    background-color: #c0c0c0;
+    border: 2px outset #fff;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    padding: 6px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s, border 0.2s, box-shadow 0.2s;
+    border-radius: 3px;
+    display: none;
+}
+
+.deploy-button:hover,
+.try-button:hover,
+.initialize-button:hover,
+.withdraw-button:hover,
+.want-deposit-button:hover,
+.learn-more-button:hover,
+.all-clear-button:hover,
+.not-interested-button:hover,
+.qr-yes-button:hover,
+.qr-no-button:hover,
+.retry-button:hover,
+.back-button:hover,
+.qr-want-button:hover,
+.status-button:hover,
+.close-button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #d3d3d3, 0 0 20px #d3d3d3, 0 0 30px #d3d3d3;
+}
+
+.deploy-button:active,
+.try-button:active,
+.initialize-button:active,
+.withdraw-button:active,
+.want-deposit-button:active,
+.learn-more-button:active,
+.all-clear-button:active,
+.not-interested-button:active,
+.qr-yes-button:active,
+.qr-no-button:active,
+.retry-button:active,
+.back-button:active,
+.qr-want-button:active,
+.status-button:active,
+.close-button:active {
+    border: 2px inset #fff;
+}
+
+.deploy-button.visible,
+.try-button.visible,
+.initialize-button.visible,
+.withdraw-button.visible,
+.want-deposit-button.visible,
+.learn-more-button.visible,
+.all-clear-button.visible,
+.not-interested-button.visible,
+.qr-yes-button.visible,
+.qr-no-button.visible,
+.retry-button.visible,
+.back-button.visible,
+.qr-want-button.visible,
+.status-button.visible,
+.close-button.visible {
+    display: inline-block;
+}
+
+.status-panel {
+    display: none;
+    width: 100%;
+    padding: 8px;
+    background-color: #000;
+    border: 2px outset #c0c0c0;
+    color: #c0c0c0;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.status-panel.visible {
+    display: block;
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: #c0c0c0;
+}
+
+.status-table th,
+.status-table td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.status-table th {
+    color: #c0c0c0;
+    text-transform: uppercase;
+}
+
+.status-indicator.green::before {
+    content: '🟢';
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.trade-status-indicator.green::before {
+    content: '🟢';
+    display: inline-block;
+    margin-left: 8px;
+    animation: blink 1.5s infinite;
+}
+
+.trade-status-indicator.orange::before {
+    content: '🟠';
+    display: inline-block;
+    margin-left: 8px;
+    animation: blink 1.5s infinite;
+}
+
+.params-frame {
+    width: 100%;
+    padding: 8px;
+    background-color: #000;
+    border: 2px outset #c0c0c0;
+    color: #c0c0c0;
+    border-radius: 3px;
+    margin-top: 6px;
+    box-sizing: border-box;
+}
+
+.params-title {
+    color: #c0c0c0;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.params-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    font-size: 14px;
+}
+
+.param-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    border-bottom: 1px dotted #333;
+}
+
+.param-value {
+    color: #c0c0c0;
+    transition: opacity 0.3s ease;
+}
+
+.param-value.update {
+    opacity: 0.5;
+}
+
+.contract-address-container {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.contract-address-container.visible {
+    display: block;
+}
+
+.contract-address-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #c0c0c0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.contract-address-label {
+    color: #c0c0c0;
+    font-size: 14px;
+}
+
+.contract-address-link {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contract-address-link:hover {
+    text-decoration: underline;
+}
+
+.copy-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #c0c0c0;
+    border: 2px outset #fff;
+    color: #000;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.2s, border 0.2s, box-shadow 0.2s;
+}
+
+.copy-button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #d3d3d3, 0 0 20px #d3d3d3, 0 0 30px #d3d3d3;
+}
+
+.copy-button:active {
+    border: 2px inset #fff;
+}
+
+.copy-button svg {
+    width: 12px;
+    height: 12px;
+}
+
+.copy-button .default-message {
+    display: flex;
+    align-items: center;
+}
+
+.copy-button .success-message {
+    display: none;
+    align-items: center;
+    color: #00ff00;
+}
+
+.copy-button.copied .default-message {
+    display: none;
+}
+
+.copy-button.copied .success-message {
+    display: flex;
+}
+
+.copy-button span {
+    font-size: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.contract-balance {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border: 2px inset #c0c0c0;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.contract-balance.visible {
+    display: block;
+}
+
+.trade-stats {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    border: 2px inset #c0c0c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.trade-stats.visible {
+    display: block;
+}
+
+.stats-title {
+    font-weight: bold;
+    color: #c0c0c0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#trade-profit,
+#trade-count {
+    color: #00ff00;
+}
+
+.qr-code-container {
+    display: none;
+    width: 200px;
+    height: auto;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.qr-code-container.visible {
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a1a1a, #333);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 500px;
+    background: #c0c0c0;
+    border: 2px outset #fff;
+    border-radius: 0 10px 10px 0;
+    color: #000;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border 0.2s, box-shadow 0.2s;
+}
+
+.sidebar-toggle:hover {
+    background: #fff;
+    box-shadow: 0 0 10px #d3d3d3, 0 0 20px #d3d3d3, 0 0 30px #d3d3d3;
+}
+
+.sidebar-content {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-item a {
+    color: #c0c0c0;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.sidebar-item a:hover {
+    color: #fff;
+}
+
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-in-center {
+    animation: scale-in-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.status-indicator.green.blink::before {
+    animation: blink 1.5s infinite;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+    .header {
+        font-size: 38px;
+        padding: 15px 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .header-container {
+        top: 15px;
+    }
+
+    .profit-indicator {
+        margin: 70px 0 15px;
+    }
+
+    .indicator-container {
+        font-size: 36px;
+        gap: 15px;
+    }
+
+    .indicator-bar {
+        width: 22px;
+        height: 220px;
+    }
+
+    .indicator-line {
+        width: 90px;
+        height: 4px;
+    }
+
+    .percent-text {
+        font-size: 32px;
+        top: -45px;
+        left: 30px;
+    }
+
+    .indicator-label {
+        font-size: 14px;
+        left: 130px;
+        max-width: 350px;
+    }
+
+    .cmd-window {
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+
+    .sidebar-toggle {
+        top: 20%;
+        right: -25px;
+        width: 25px;
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .sidebar-content {
+        padding: 50px 15px;
+    }
+
+    .sidebar-item a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        font-size: 32px;
+        padding: 10px 8px;
+        letter-spacing: 0.05em;
+    }
+
+    .header-container {
+        top: 5px;
+    }
+
+    .profit-indicator {
+        margin: 60px 0 15px;
+    }
+
+    .indicator-container {
+        font-size: 30px;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .indicator-bar {
+        width: 20px;
+        height: 150px;
+    }
+
+    .indicator-line {
+        width: 80px;
+        height: 4px;
+    }
+
+    .percent-text {
+        font-size: 28px;
+        top: -35px;
+        left: 28px;
+    }
+
+    .indicator-label {
+        font-size: 12px;
+        max-width: 90%;
+        text-align: center;
+        position: relative;
+        left: 0;
+        margin: 10px 0;
+    }
+
+    .cmd-window {
+        width: 90%;
+        max-width: 500px;
+        height: 600px;
+    }
+
+    .cmd-window.expanded {
+        height: 600px;
+    }
+
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .gas-tracker {
+        font-size: 12px;
+    }
+
+    .status-table {
+        font-size: 11px;
+    }
+
+    .params-list {
+        grid-template-columns: 1fr;
+        font-size: 10px;
+    }
+
+    .status-button,
+    .close-button {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    .tutorial-text-container {
+        padding: 8px;
+    }
+
+    .status-panel {
+        padding: 8px;
+    }
+
+    .params-frame {
+        padding: 8px;
+        margin-top: 6px;
+    }
+
+    .params-title {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .param-item {
+        padding: 2px;
+    }
+
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+
+    .sidebar-toggle {
+        top: 20%;
+        right: -20px;
+        width: 20px;
+        height: 100px;
+        font-size: 12px;
+    }
+
+    .sidebar-content {
+        padding: 50px 15px;
+    }
+
+    .sidebar-item a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        font-size: 24px;
+        padding: 8px 5px;
+    }
+
+    .header-container {
+        top: 3px;
+    }
+
+    .profit-indicator {
+        margin: 50px 0 10px;
+    }
+
+    .indicator-container {
+        font-size: 24px;
+    }
+
+    .indicator-bar {
+        width: 15px;
+        height: 120px;
+    }
+
+    .indicator-line {
+        width: 60px;
+        height: 3px;
+    }
+
+    .percent-text {
+        font-size: 20px;
+        top: -25px;
+        left: 20px;
+    }
+
+    .indicator-label {
+        font-size: 10px;
+        max-width: 95%;
+        text-align: center;
+        position: relative;
+        left: 0;
+        margin: 10px 0;
+    }
+
+    .cmd-window {
+        width: 95%;
+        height: 350px;
+    }
+
+    .cmd-window.expanded {
+        height: 550px;
+    }
+
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .gas-tracker {
+        font-size: 8px;
+    }
+
+    .status-table {
+        font-size: 8px;
+    }
+
+    .params-list {
+        font-size: 7px;
+    }
+
+    .status-button,
+    .close-button {
+        font-size: 9px;
+        padding: 4px 10px;
+    }
+
+    .tutorial-text-container::before {
+        font-size: 6px;
+    }
+
+    .tutorial-text {
+        font-size: 8px;
+    }
+
+    .deploy-button,
+    .try-button,
+    .initialize-button,
+    .withdraw-button,
+    .want-deposit-button,
+    .learn-more-button,
+    .all-clear-button,
+    .not-interested-button,
+    .qr-yes-button,
+    .qr-no-button,
+    .retry-button,
+    .back-button,
+    .qr-want-button,
+    .status-button,
+    .close-button {
+        font-size: 9px;
+        padding: 4px 10px;
+    }
+
+    .title-bar {
+        font-size: 9px;
+    }
+
+    .connect-button {
+        font-size: 9px;
+        padding: 4px 10px;
+    }
+
+    .plug-icon::before {
+        font-size: 10px;
+    }
+
+    .wallet-address-container {
+        font-size: 8px;
+    }
+
+    .params-title {
+        font-size: 8px;
+    }
+
+    .contract-address-container {
+        font-size: 8px;
+    }
+
+    .contract-address-label {
+        font-size: 8px;
+    }
+
+    .contract-address-link {
+        font-size: 8px;
+    }
+
+    .copy-button span {
+        font-size: 6px;
+    }
+
+    .contract-balance {
+        font-size: 8px;
+    }
+
+    .trade-stats {
+        font-size: 8px;
+    }
+
+    .stats-title {
+        font-size: 8px;
+    }
+
+    .qr-code-container {
+        width: 120px;
+    }
+
+    .sidebar {
+        width: 180px;
+        left: -180px;
+    }
+
+    .sidebar-toggle {
+        top: 20%;
+        right: -15px;
+        width: 15px;
+        height: 100px;
+        font-size: 10px;
+    }
+
+    .sidebar-content {
+        padding: 40px 10px;
+    }
+
+    .sidebar-item a {
+        font-size: 12px;
+    }
+}
