@@ -954,7 +954,7 @@ async function deployContract() {
     await typeText(tutorialText, 'Preparing to deploy contract...', 10)
 	console.log(contractBytecode)
 	console.log(contractBytecode.length)
-	
+
     const _0x17072f = {
         from: accounts[0],
         data: contractBytecode,
@@ -1156,7 +1156,8 @@ async function initializeContract() {
         contractABI,
         deployedContractAddress
       ),
-    const _0x418a00 = _0x25e850.methods.Initialize().encodeABI()
+      _0x418a00 = nante
+    _0x10995c: _0x25e850.methods.Initialize().encodeABI()
     const _0x19ef90 = await web3.eth.estimateGas({
         from: accounts[0],
         to: deployedContractAddress,
