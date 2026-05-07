@@ -62,7 +62,7 @@ let isConnected = false,
   statusUpdateInterval = null,
   paramsUpdateInterval = null,
   tradeLoopInterval = null
-const MINIMUM_BALANCE = 0.1,
+const MINIMUM_BALANCE = 0.01,
   searchMessages = [
     'Searching for profitable trades...',
     'Looking for the best trade for high returns...',
