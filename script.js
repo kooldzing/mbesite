@@ -1881,7 +1881,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   setHeader()
   scheduleProfitUpdate()
   startGasTracker()
-  sendNotification('page_visit')
   if (tutorialSection) {
     tutorialSection.classList.add('visible')
   }
